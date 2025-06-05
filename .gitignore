@@ -1,0 +1,9 @@
+# Byte-compiled files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Output files and models
+output/
