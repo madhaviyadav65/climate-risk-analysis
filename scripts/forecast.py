@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 import pickle
+from tensorflow.keras.losses import MeanSquaredError
 
 LOOKBACK = 30  # Must match training
 EXTREME_THRESHOLD = 0.9  # Normalized threshold for extremes, adapt as needed
@@ -20,8 +21,8 @@ def main():
     values = df['temperature'].values.reshape(-1, 1)
     
     # Load scaler and model
-    scaler = pickle.load(open("output/scaler.pkl", "rb"))
-    model = load_model("output/climate_model.h5")
+    scaler = pd.read_pickle("output/scaler.pkl")
+    model = load_model("output/climate_model.h5", custom_objects={'mse': MeanSquaredError()})
     
     scaled_values = scaler.transform(values)
     X = create_dataset(scaled_values, LOOKBACK)
