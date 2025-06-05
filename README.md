@@ -12,4 +12,23 @@ Ireland faces a growing need to address climate change and its impacts. This pro
 - **Extendable Architecture:** Easily update with more parameters (e.g., wind speed, humidity) or alternative forecasting methods.
 
 ## Repository Structure
-ai-powered-climate-risk-analysis/ ├── README.md ├── requirements.txt ├── .gitignore ├── data/ │   └── climate_data.csv ├── notebooks/ │   └── Exploratory_Analysis.ipynb ├── scripts/ │   ├── preprocess.py │   ├── train_model.py │   └── forecast.py └── output/ └── plots/
+
+```
+climate-risk-analysis/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── data/
+│   ├── climate_clean.csv
+│   └── climate_data.csv
+├── output/
+│   ├── climate_model.h5
+│   ├── scaler.pkl
+│   └── plots/
+│       ├── temperature_forecast.png
+│       └── training_loss.png
+└── scripts/
+    ├── forecast.py
+    ├── preprocess.py
+    └── train_model.py
+```
